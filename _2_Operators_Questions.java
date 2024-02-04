@@ -1,6 +1,7 @@
 // Question : What will be the output of the following programs :
 
 
+
 // public class _2_Operators_Questions {
 //     public static void main(String args[]) {
 //         int x=2, y=5;
