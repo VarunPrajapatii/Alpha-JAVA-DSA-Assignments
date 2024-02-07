@@ -82,6 +82,8 @@
 //             return false;
 //         }
 //     }
+
+
 //     public static void main(String[] args) {
 //         Scanner sc = new Scanner(System.in);
 //         System.out.println("Enter a number to check if its palindrome or not: ");
@@ -131,15 +133,20 @@
 
 // public class _5_Functions_Questions {
 
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         System.out.println("Enter number to find the sum of its digits: ");
-//         int num = sc.nextInt();
+//     public static int sumDigits(int num) {
 //         int sum = 0;
 //         while (num!=0) {
 //             sum=sum+(num%10);
 //             num=num/10;
 //         }
-//         System.out.println("Sum of digits is: "+ sum);
+//         return sum;
+//     };
+
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         System.out.println("Enter number to find the sum of its digits: ");
+//         int num = sc.nextInt();
+        
+//         System.out.println("Sum of digits is: "+ sumDigits(num));
 //     };
 // };
