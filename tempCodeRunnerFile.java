@@ -1,22 +1,23 @@
-import java.util.*;
 
-public class _3_Conditional_Questions {
+
+public class _5_Functions_Questions {
+    
+    public static boolean isEven(int num) {    
+        if(num % 2 == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter a year: ");
+        System.out.println("Enter a number: ");
         int num = sc.nextInt();
-        if (num % 4 == 0) {
-            if(num % 100 == 0) {
-                if(num % 400 == 0) {
-                    System.out.println("Its a leap year...");
-                }
-                else {
-                    System.out.println("Not a leap year...");
-                }
-            }
-            else {
-                System.out.println("Not a leap year...");
-            }
+        if(isEven(num)) {
+            System.out.println("Number is Even");
+        } else {
+            System.out.println("Number is Odd");
         }
     };
 };
