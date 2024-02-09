@@ -157,6 +157,7 @@ public class _6_Advanced_Patterns {
             System.out.println();            
         };
     };
+    
 
 
     public static void diamond_pattern(int n) {
