@@ -1,30 +1,26 @@
 import java.util.*;
-
 public class Temp {
     
     public static void main(String[] args) {
-        String str = "abcc";
-        StringBuilder sb = new StringBuilder("");
-
-        int count =0;
-        char temp;
-        int i=0;
-        temp = str.charAt(i);
-        while(i<str.length()) {
-            if(temp==str.charAt(i)) {
-                count++;
-                i++;
-            }
-            else {
-                sb.append(temp);
-                sb.append(count);
-                count=0;
-                temp=str.charAt(i);
-
-            }
+        ArrayList<ArrayList<Integer>> mainList = new ArrayList<>();
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for(int i=1; i<=4; i++) {
+            list1.add(i);
         }
-        sb.append(temp);
-        sb.append(count);
-        System.out.println(sb.toString());
+        mainList.add(list1);
+
+        for(int i=1; i<=3; i++) {
+            list2.add(i*2);
+        }
+        mainList.add(list2);
+
+        for(int i=0; i<mainList.size(); i++) {
+            ArrayList<Integer> currList = mainList.get(i);
+            for(int j=0; j<currList.size(); j++) {
+                System.out.print(currList.get(j) + " ");
+            }
+            System.out.println();
+        }
     }
 }
