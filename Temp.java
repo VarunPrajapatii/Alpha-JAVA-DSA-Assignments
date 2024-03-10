@@ -1,16 +1,14 @@
-import java.util.*;
+import java.util.LinkedList;
 public class Temp {
     
 
 
     public static void main(String[] args) {
-        
-        for(int i=0; i<mainList.size(); i++) {
-            ArrayList<Integer> currList = mainList.get(i);
-            for(int j=0; j<currList.size(); j++) {
-                System.out.print(currList.get(j) + " ");
-            }
-            System.out.println();
-        }
+        LinkedList<Integer> ll = new LinkedList<>();
+
+        ll.addLast(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        System.out.println(ll);
     }
 }
