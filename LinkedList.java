@@ -235,7 +235,7 @@ public class LinkedList {
         Node slow = head;
         Node fast = head;
         boolean cycle = false;
-        while (fast != null || fast.next != null) {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
             if(fast == slow) {
@@ -264,7 +264,7 @@ public class LinkedList {
         Node slow = head;
         Node fast = head.next;
 
-        while(fast != null || fast.next != null) {
+        while(fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -301,7 +301,6 @@ public class LinkedList {
         return mergedLL.next;
     }
 
-
     public Node mergeSort(Node head) {
         if(head == null || head.next == null) {
             return head;
@@ -320,35 +319,62 @@ public class LinkedList {
         return merge(newLeft, newRight);
     }
 
+    public void zigZag() {
+        //find mid
+        Node slow = head;
+        Node fast = head.next;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        Node mid = slow;
+
+        //reverse 2nd Half
+        Node curr = mid.next;
+        mid.next = null;
+        Node prev = null;
+        Node next;
+
+        while(curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        Node left = head;
+        Node right = prev;
+        Node nextL, nextR;
+
+        //alt nerge / zig-zag merge
+        while(left != null && right != null) {
+            nextL = left.next;
+            left.next = right;
+            nextR = right.next;
+            right.next = nextL;
+
+            left = nextL;
+            right = nextR;
+        }
+    }
+
+
+
+
 
     public static void main(String[] args) {
         
         LinkedList ll = new LinkedList();
-        // ll.addFirst(1);
-        // ll.addFirst(2);
-        // ll.addLast(3);
-        // ll.addLast(4);
-        // ll.add(2,9);
-
-        // ll.printLL();
-        // System.out.println();
-        // // System.out.println(ll.size);
-        // System.out.println(ll.recSearch(3));
-        // System.out.println(ll.recSearch(10));
-
-        // System.out.println();
-        // ll.reverse();
-        // ll.printLL();
-        // ll.deleteNthfronEnd(3);
-        // System.out.println();
-        // ll.printLL();
-
+        
         ll.addLast(1);
         ll.addLast(2);
-        ll.addLast(2);
-        ll.addLast(1);
+        ll.addLast(3);
+        ll.addLast(4);
+        // ll.addLast(5);
         ll.printLL();
-        System.out.println(ll.checkPalindrome());
+
+        ll.zigZag();
+        ll.printLL();
     }
 
 }
