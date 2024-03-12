@@ -1,14 +1,17 @@
-import java.util.LinkedList;
+import java.util.Stack;
 public class Temp {
     
 
 
     public static void main(String[] args) {
-        LinkedList<Integer> ll = new LinkedList<>();
+        Stack<Integer> s = new Stack<>();
+        s.push(1);
+        s.push(2);
+        s.push(3);
 
-        ll.addLast(1);
-        ll.addLast(2);
-        ll.addLast(3);
-        System.out.println(ll);
+        while(!s.isEmpty()) {
+            System.out.println(s.peek());
+            s.pop();
+        }
     }
 }
