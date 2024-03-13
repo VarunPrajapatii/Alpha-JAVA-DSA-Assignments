@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class StackProblemsCode {
+    //Stack Span Problem
     public static void stockSpan(int stocks[], int span[]) {
         Stack<Integer> s = new Stack<>();
         span[0] = 1;
@@ -22,6 +23,7 @@ public class StackProblemsCode {
         }
     }
 
+    //Next Greater Element
     public static void nextGreater(int arr[], int nextG[]) {
         Stack<Integer> s = new Stack<>();
         for(int i=arr.length-1; i>=0; i--) {
@@ -37,6 +39,7 @@ public class StackProblemsCode {
         }
     }
 
+    //Valid Parenthesis
     public static boolean isValid(String str) {
         Stack<Character> s = new Stack<>();
         for(int i=0; i<str.length(); i++) {
@@ -63,6 +66,30 @@ public class StackProblemsCode {
         }
     }
 
+    //Duplicate Parenthesis
+    public static boolean checkDuplicateParenthesis(String str) {
+        Stack<Character> s = new Stack<>();
+
+        for(int i=0; i<str.length(); i++) {
+            char ch = str.charAt(i);
+            if(ch == ')') {
+                int count = 0;
+                while(s.peek() != '(') {
+                    s.pop();
+                    count++;
+                }
+                if(count < 1) {
+                    return true; //duplicate
+                } else {
+                    s.pop(); //opening pair
+                }
+            } else {
+                //opening
+                s.push(ch);
+            }
+        }
+        return false;        
+    }
 
 
     public static void main(String[] args) {
@@ -85,7 +112,10 @@ public class StackProblemsCode {
         // System.out.println();
 
         // System.out.println(isValid("()({})[]"));
-
+        String str = "((a+b))";
+        String str2 = "(a-b)";
+        System.out.println(checkDuplicateParenthesis(str));
+        System.out.println(checkDuplicateParenthesis(str2));
 
     }
 }
