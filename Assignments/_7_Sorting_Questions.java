@@ -1,3 +1,5 @@
+package Assignments;
+
 //Use the following sorting algorithms to sort an array in Descending Order
 //Bubble Sort
 //Selection Sort

@@ -1,3 +1,4 @@
+package Assignments;
 // Hollow Rectangle Pattern
 // Inverted and Rotated Half-Pyramid Pattern
 // Floyd's Triangle Pattern
