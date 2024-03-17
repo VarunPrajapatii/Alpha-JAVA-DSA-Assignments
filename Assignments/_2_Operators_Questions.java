@@ -1,4 +1,4 @@
-package Assignments;
+// package Assignments;
 // Question : What will be the output of the following programs :
 
 
@@ -57,14 +57,14 @@ package Assignments;
 
 
 
-public class _2_Operators_Questions {
-    public static void main(String args[]) {
-        int x = 10, y =5;
+// public class _2_Operators_Questions {
+//     public static void main(String args[]) {
+//         int x = 10, y =5;
 
-        int exp1 = (y * (x / y + x / y));
-        int exp2 = (y * x / y + y * x / y);
+//         int exp1 = (y * (x / y + x / y));
+//         int exp2 = (y * x / y + y * x / y);
 
-        System.out.println(exp1);
-        System.out.println(exp2);
-    };
-};
+//         System.out.println(exp1);
+//         System.out.println(exp2);
+//     };
+// };
